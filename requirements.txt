@@ -1,0 +1,17 @@
+faiss-cpu>=1.16.0      # first release that ships faiss.contrib.e_means (E-Means)
+catboost>=1.2
+lightgbm>=4.0
+optuna>=4.0
+mlflow>=3.0
+streamlit>=1.40
+plotly>=5.0
+scikit-learn>=1.4
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+seaborn>=0.13
+joblib>=1.3
+jupyter>=1.0          # notebooks (nbconvert, ipykernel)
+nbconvert>=7.0
+ipykernel>=6.0
