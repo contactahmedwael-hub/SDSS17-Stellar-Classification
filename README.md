@@ -21,6 +21,11 @@ GALAXY / QSO / STAR classification on the SDSS17 dataset (`data/star_classificat
 ## Run
 ```bash
 pip install -r requirements.txt
+or
+uv sync
+```
+
+```
 ./run_notebooks.sh              # executes notebooks 01 -> 05 in place (~35 min on one CPU core)
 streamlit run app.py
 mlflow ui --backend-store-uri sqlite:///mlflow.db
