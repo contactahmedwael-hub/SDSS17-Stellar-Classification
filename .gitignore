@@ -13,4 +13,9 @@ mlruns
 uv.lock
 mlflow.db
 .gitignore
+assets/sdss_dr17_catboost_classification_deck.html
+ML_Capstone_Guidelines.pdf
+SDSS17_CatBoost_Presentation.pptx
+artifacts
+
 
