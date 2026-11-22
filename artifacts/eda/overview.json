@@ -1,0 +1,106 @@
+{
+  "shape": [
+    100000,
+    18
+  ],
+  "columns": [
+    "obj_ID",
+    "alpha",
+    "delta",
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "run_ID",
+    "rerun_ID",
+    "cam_col",
+    "field_ID",
+    "spec_obj_ID",
+    "class",
+    "redshift",
+    "plate",
+    "MJD",
+    "fiber_ID"
+  ],
+  "dtypes": {
+    "obj_ID": "float64",
+    "alpha": "float64",
+    "delta": "float64",
+    "u": "float64",
+    "g": "float64",
+    "r": "float64",
+    "i": "float64",
+    "z": "float64",
+    "run_ID": "int64",
+    "rerun_ID": "int64",
+    "cam_col": "int64",
+    "field_ID": "int64",
+    "spec_obj_ID": "float64",
+    "class": "str",
+    "redshift": "float64",
+    "plate": "int64",
+    "MJD": "int64",
+    "fiber_ID": "int64"
+  },
+  "missing_values_total": 0,
+  "duplicate_rows": 0,
+  "duplicate_obj_ID": 21947,
+  "duplicate_spec_obj_ID": 0,
+  "class_counts": {
+    "GALAXY": 59445,
+    "STAR": 21594,
+    "QSO": 18961
+  },
+  "class_share_pct": {
+    "GALAXY": 59.44,
+    "STAR": 21.59,
+    "QSO": 18.96
+  },
+  "sentinel_-9999_counts": {
+    "u": 1,
+    "g": 1,
+    "r": 0,
+    "i": 0,
+    "z": 1
+  },
+  "excluded_identifier_columns": [
+    "obj_ID",
+    "run_ID",
+    "rerun_ID",
+    "cam_col",
+    "field_ID",
+    "spec_obj_ID",
+    "plate",
+    "MJD",
+    "fiber_ID"
+  ],
+  "excluded_sky_position_columns": [
+    "alpha",
+    "delta"
+  ],
+  "rows_removed_by_cleaning": 1,
+  "rows_after_cleaning": 99999,
+  "split_sizes": {
+    "train": 69999,
+    "val": 15000,
+    "test": 15000
+  },
+  "split_class_share_pct": {
+    "train": {
+      "GALAXY": 59.45,
+      "STAR": 21.59,
+      "QSO": 18.96
+    },
+    "val": {
+      "GALAXY": 59.45,
+      "STAR": 21.59,
+      "QSO": 18.96
+    },
+    "test": {
+      "GALAXY": 59.45,
+      "STAR": 21.59,
+      "QSO": 18.96
+    }
+  }
+}

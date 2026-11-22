@@ -1,0 +1,117 @@
+{
+  "implementation": "faiss.contrib.e_means.NumpyEmeans (Faiss 1.16.0)",
+  "k": 3,
+  "nepochs": 10,
+  "features": [
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "u-g",
+    "g-r",
+    "r-i",
+    "i-z",
+    "redshift"
+  ],
+  "scaler": "StandardScaler (fit on train only)",
+  "metrics_with_redshift": {
+    "train": {
+      "silhouette": 0.38933315873146057,
+      "davies_bouldin": 1.0872270729106506,
+      "ARI": 0.23142986377785835,
+      "NMI": 0.23991623876676668
+    },
+    "val": {
+      "silhouette": 0.38962164521217346,
+      "davies_bouldin": 1.0764253170818139,
+      "ARI": 0.23881739876396044,
+      "NMI": 0.24384524478051883
+    },
+    "test": {
+      "silhouette": 0.39116913080215454,
+      "davies_bouldin": 1.0815868853294146,
+      "ARI": 0.23688645745460163,
+      "NMI": 0.24565213648271644
+    }
+  },
+  "metrics_without_redshift": {
+    "train": {
+      "silhouette": 0.4003249406814575,
+      "davies_bouldin": 1.0007636619152134,
+      "ARI": 0.212347280660567,
+      "NMI": 0.2118021311447425
+    },
+    "val": {
+      "silhouette": 0.3990141451358795,
+      "davies_bouldin": 1.0009951593905513,
+      "ARI": 0.21913426150499762,
+      "NMI": 0.21530973709800957
+    },
+    "test": {
+      "silhouette": 0.4009198248386383,
+      "davies_bouldin": 0.9971901585611797,
+      "ARI": 0.2135219106943188,
+      "NMI": 0.2108500999627627
+    }
+  },
+  "train_seconds": 0.257706880569458,
+  "cluster_sizes": {
+    "train": {
+      "0": 21790,
+      "1": 27813,
+      "2": 20396
+    },
+    "val": {
+      "0": 4617,
+      "1": 6101,
+      "2": 4282
+    },
+    "test": {
+      "0": 4681,
+      "1": 5992,
+      "2": 4327
+    }
+  },
+  "cluster_vs_class_pct_test": {
+    "0": {
+      "GALAXY": 60.12,
+      "QSO": 3.5,
+      "STAR": 36.38
+    },
+    "1": {
+      "GALAXY": 86.03,
+      "QSO": 1.72,
+      "STAR": 12.25
+    },
+    "2": {
+      "GALAXY": 21.91,
+      "QSO": 59.56,
+      "STAR": 18.53
+    }
+  },
+  "recipe": {
+    "name": "canonical_v1",
+    "batch_law": "quality",
+    "batch_law_requested": "auto",
+    "batch_law_reason": "d <= 16",
+    "batch_size": 512,
+    "batch_size_requested": null,
+    "alpha0": 0.7079205800507424,
+    "alpha0_source": "step_law",
+    "nepochs": 10,
+    "steps_per_pass": 137,
+    "total_steps": 1370,
+    "epoch_rows": "[69999, 69999, 69999, 69999, 69999, 69999, 69999, 69999, 69999, 69999]",
+    "epoch_steps": "[137, 137, 137, 137, 137, 137, 137, 137, 137, 137]",
+    "tail_policy": "keep",
+    "alpha_min_factor": 0.1,
+    "check_unused_every": 5,
+    "unused_threshold": 0.1,
+    "split_epsilon": 0.0001,
+    "init_usage": 1.52587890625e-05,
+    "seed": 42,
+    "backend": "faiss",
+    "assignment_chunk_size": 65536
+  }
+}

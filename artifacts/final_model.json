@@ -1,0 +1,76 @@
+{
+  "model": "lightgbm",
+  "config": "with_redshift",
+  "features": [
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "u-g",
+    "g-r",
+    "r-i",
+    "i-z",
+    "redshift"
+  ],
+  "path": "artifacts/models/with_redshift_lightgbm.joblib",
+  "selection_rule": "highest test Macro-F1 among the two Optuna-tuned models",
+  "test": {
+    "accuracy": 0.9804666666666667,
+    "macro_f1": 0.9772534135400545,
+    "weighted_f1": 0.9803839473847549,
+    "precision_macro": 0.979631157878933,
+    "recall_macro": 0.9749897514921554,
+    "precision_weighted": 0.9803749895188981,
+    "recall_weighted": 0.9804666666666667,
+    "f1_GALAXY": 0.9837366567931594,
+    "f1_QSO": 0.9515669515669516,
+    "f1_STAR": 0.9964566322600524
+  },
+  "val": {
+    "accuracy": 0.9789333333333333,
+    "macro_f1": 0.9753890297740176,
+    "weighted_f1": 0.9788083536678092,
+    "precision_macro": 0.9787624190275004,
+    "recall_macro": 0.9722225508243681,
+    "precision_weighted": 0.9788187579128395,
+    "recall_weighted": 0.9789333333333333,
+    "f1_GALAXY": 0.9823641031365108,
+    "f1_QSO": 0.945805759255947,
+    "f1_STAR": 0.9979972269295948
+  },
+  "bootstrap_vs_runner_up": {
+    "mean_diff_macro_f1": 0.0023455331673932463,
+    "ci95": [
+      0.0008619671618958213,
+      0.003875010790854233
+    ],
+    "n_boot": 1000
+  },
+  "explanation": [
+    "**Lightgbm** was selected: test Macro-F1 0.9773 vs 0.9749 for Catboost (difference +0.0024).",
+    "A paired bootstrap over the 15,000 test rows gives a 95% interval of [+0.0009, +0.0039] for that difference, so the gap is statistically distinguishable from zero.",
+    "The two models disagree on 102 of 15,000 test objects; the largest per-class F1 advantage of the winner is on STAR (+0.0049).",
+    "Tuned configuration: num_leaves 49, max_depth 9, learning rate 0.035, 301 trees. Leaf-wise growth lets LightGBM carve the sharp, non-linear decision boundaries of redshift/colour space (e.g. the QSO-vs-high-z-galaxy overlap) with fewer, deeper splits - a plausible reason for its edge, not something this experiment isolates.",
+    "Most influential features for the winner: redshift (64.2%), r-i (14.3%), g-r (6.3%).",
+    "Cost: final fit 7.2s vs 52.6s."
+  ],
+  "runner_up": "catboost",
+  "best_params": {
+    "learning_rate": 0.03458151587485985,
+    "num_leaves": 49,
+    "max_depth": 9,
+    "min_child_samples": 5,
+    "subsample": 0.5303449223903145,
+    "colsample_bytree": 0.6561721520423962,
+    "reg_alpha": 0.11973116449404697,
+    "reg_lambda": 0.49124636104578173,
+    "class_weight": "None"
+  },
+  "classes": [
+    "GALAXY",
+    "QSO",
+    "STAR"
+  ],
+  "photometry_only_best": "lightgbm"
+}

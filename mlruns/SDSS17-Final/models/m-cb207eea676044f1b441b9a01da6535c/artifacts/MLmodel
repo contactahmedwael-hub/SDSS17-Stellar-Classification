@@ -1,0 +1,27 @@
+artifact_path: file:///home/claude/sdss17/mlruns/SDSS17-Final/models/m-cb207eea676044f1b441b9a01da6535c/artifacts
+flavors:
+  lightgbm:
+    code: null
+    data: model.lgb
+    lgb_version: 4.7.0
+    model_class: lightgbm.basic.Booster
+    serialization_format: skops
+    skops_trusted_types:
+    - lightgbm.basic.Booster
+    - lightgbm.sklearn.LGBMClassifier
+    - collections.OrderedDict
+    - lightgbm.sklearn.LGBMRegressor
+  python_function:
+    data: model.lgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.lightgbm
+    python_version: 3.12.3
+mlflow_version: 3.18.0
+model_id: m-cb207eea676044f1b441b9a01da6535c
+model_size_bytes: 4596502
+model_uuid: m-cb207eea676044f1b441b9a01da6535c
+prompts: null
+run_id: 696d3da19c0345c294b6296b8d0efa81
+utc_time_created: '2026-11-21 02:32:04.370661'

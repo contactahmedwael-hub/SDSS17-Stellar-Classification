@@ -1,0 +1,22 @@
+artifact_path: file:///home/claude/sdss17/mlruns/SDSS17-CatBoost/models/m-2f7715e8cb9e4214bd2bec5979becc0e/artifacts
+flavors:
+  catboost:
+    catboost_version: 1.2.10
+    code: null
+    data: model.cb
+    model_type: CatBoostClassifier
+    save_format: cbm
+  python_function:
+    data: model.cb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.catboost
+    python_version: 3.12.3
+mlflow_version: 3.18.0
+model_id: m-2f7715e8cb9e4214bd2bec5979becc0e
+model_size_bytes: 939184
+model_uuid: m-2f7715e8cb9e4214bd2bec5979becc0e
+prompts: null
+run_id: 4aeaf69b291443309ad53a9c825ca8b2
+utc_time_created: '2026-11-21 02:27:25.090925'

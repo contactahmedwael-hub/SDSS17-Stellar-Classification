@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+:root {
+  --font-serif: "Libertinus Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "CommitMono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Default Light Palette */
+  --bg-page: #f8f7f3;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f1efe9;
+  --bg-nav: rgba(248, 247, 243, 0.90);
+  --ink-primary: #141619;
+  --ink-secondary: #4b525c;
+  --ink-muted: #6c7480;
+  --rule-subtle: rgba(20, 22, 25, 0.12);
+  --rule-strong: rgba(20, 22, 25, 0.24);
+  --accent: #1e4e79;
+  --accent-soft: rgba(30, 78, 121, 0.11);
+  --code-bg: rgba(20, 22, 25, 0.06);
+  --shadow-card: 0 1px 2px rgba(20, 22, 25, 0.05);
+}
+
+/* Explicit Dark Theme via marker element */
+.stApp:has(#sdss-mode-dark) {
+  --bg-page: #0b0d12;
+  --bg-surface: #12161f;
+  --bg-elevated: #181e2b;
+  --bg-nav: rgba(11, 13, 18, 0.90);
+  --ink-primary: #f2f4f8;
+  --ink-secondary: #aeb7c7;
+  --ink-muted: #7c879c;
+  --rule-subtle: rgba(242, 244, 248, 0.11);
+  --rule-strong: rgba(242, 244, 248, 0.24);
+  --accent: #6aa6e8;
+  --accent-soft: rgba(106, 166, 232, 0.15);
+  --code-bg: rgba(242, 244, 248, 0.08);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Explicit Light Theme via marker element */
+.stApp:has(#sdss-mode-light) {
+  --bg-page: #f8f7f3;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f1efe9;
+  --bg-nav: rgba(248, 247, 243, 0.90);
+  --ink-primary: #141619;
+  --ink-secondary: #4b525c;
+  --ink-muted: #6c7480;
+  --rule-subtle: rgba(20, 22, 25, 0.12);
+  --rule-strong: rgba(20, 22, 25, 0.24);
+  --accent: #1e4e79;
+  --accent-soft: rgba(30, 78, 121, 0.11);
+  --code-bg: rgba(20, 22, 25, 0.06);
+  --shadow-card: 0 1px 2px rgba(20, 22, 25, 0.05);
+}
+
+/* ==========================================================================
+   BASE SHELL & HEADER BAR
+   ========================================================================== */
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+  background-color: var(--bg-page) !important;
+  color: var(--ink-primary) !important;
+  font-family: var(--font-serif) !important;
+}
+
+[data-testid="stSidebar"],
+[data-testid="collapsedControl"],
+[data-testid="stHeader"] {
+  display: none !important;
+}
+
+.stMain .block-container {
+  max-width: 1180px !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.sdss-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg-nav);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--rule-subtle);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.sdss-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-primary);
+  white-space: nowrap;
+}
+
+.sdss-brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.sdss-topbar-caption {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & EDITORIAL HIERARCHY
+   ========================================================================== */
+.sdss-header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--rule-subtle);
+}
+
+.sdss-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+
+h1, .stMarkdown h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(2rem, 3.4vw, 2.7rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ink-primary) !important;
+  margin: 0 !important;
+}
+
+h2, .stMarkdown h2, .stSubheader {
+  font-family: var(--font-serif) !important;
+  font-size: 1.42rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ink-primary) !important;
+}
+
+h3, .stMarkdown h3 {
+  font-family: var(--font-serif) !important;
+  font-size: 1.16rem !important;
+  font-weight: 600 !important;
+  color: var(--ink-primary) !important;
+}
+
+.sdss-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.62;
+  color: var(--ink-secondary);
+  max-width: 74ch;
+  margin: 0.55rem 0 0 0;
+}
+
+.stMarkdown p,
+.stMarkdown li,
+.stMarkdown span,
+label,
+.stText {
+  color: var(--ink-primary);
+}
+
+.stMarkdown p,
+.stMarkdown li {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: var(--ink-secondary);
+}
+
+.stMarkdown strong {
+  color: var(--ink-primary);
+  font-weight: 600;
+}
+
+.stCaption,
+[data-testid="stCaptionContainer"],
+[data-testid="stCaptionContainer"] p {
+  font-family: var(--font-mono) !important;
+  font-size: 0.8rem !important;
+  color: var(--ink-muted) !important;
+}
+
+code:not(pre code) {
+  font-family: var(--font-mono) !important;
+  font-size: 0.85em !important;
+  background-color: var(--code-bg) !important;
+  color: var(--ink-primary) !important;
+  padding: 0.14rem 0.38rem !important;
+  border-radius: 4px !important;
+}
+
+pre,
+[data-testid="stCodeBlock"] pre {
+  font-family: var(--font-mono) !important;
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--rule-subtle) !important;
+  border-radius: 8px !important;
+}
+
+/* ==========================================================================
+   METRICS, TABS, CARDS, INPUTS & TABLES
+   ========================================================================== */
+[data-testid="stMetric"] {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--rule-subtle) !important;
+  border-radius: 10px !important;
+  padding: 1rem 1.15rem !important;
+  box-shadow: var(--shadow-card);
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p {
+  font-family: var(--font-mono) !important;
+  font-size: 0.74rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--ink-muted) !important;
+}
+
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] > div {
+  font-family: var(--font-mono) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  font-variant-numeric: tabular-nums !important;
+  color: var(--ink-primary) !important;
+}
+
+/* Main section tabs */
+.sdss-main-tabs [data-testid="stTabs"] [role="tablist"] {
+  justify-content: center !important;
+  gap: 0.35rem !important;
+  border-bottom: 1px solid var(--rule-subtle) !important;
+  margin-bottom: 1.75rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+[data-testid="stTabs"] button[role="tab"] {
+  font-family: var(--font-mono) !important;
+  font-size: 0.82rem !important;
+  color: var(--ink-secondary) !important;
+  padding: 0.55rem 1rem !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+[data-testid="stTabs"] button[role="tab"][aria-selected="true"] {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+  background-color: var(--accent-soft) !important;
+  border-bottom: 2px solid var(--accent) !important;
+}
+
+[data-testid="stExpander"] {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--rule-subtle) !important;
+  border-radius: 10px !important;
+}
+
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+  border: 1px solid var(--rule-subtle) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  background-color: var(--bg-surface) !important;
+}
+
+input,
+textarea,
+[data-baseweb="select"] > div {
+  font-family: var(--font-mono) !important;
+  background-color: var(--bg-surface) !important;
+  color: var(--ink-primary) !important;
+  border-color: var(--rule-subtle) !important;
+}
+
+.stButton > button,
+.stDownloadButton > button {
+  font-family: var(--font-mono) !important;
+  font-size: 0.8rem !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--rule-strong) !important;
+  background-color: var(--bg-surface) !important;
+  color: var(--ink-primary) !important;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+hr,
+[data-testid="stDivider"] {
+  border-color: var(--rule-subtle) !important;
+}
